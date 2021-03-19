@@ -10,7 +10,8 @@ export default function WhatsAppWidget({
   companyName = 'Support',
   sendButton = 'Send',
   placeholder = 'Type a message',
-  phoneNumber
+  phoneNumber,
+  handleOpen
 }) {
   return (
     <div className={styles.root}>
@@ -22,6 +23,7 @@ export default function WhatsAppWidget({
           sendButton={sendButton}
           placeholder={placeholder}
           message={message}
+          handleOpen={handleOpen}
         />
         <WhatsAppButton />
       </WidgetContextProvider>

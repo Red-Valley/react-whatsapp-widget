@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const Context = React.createContext({})
 
-export function WidgetContextProvider({ children }) {
+export const WidgetContextProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleOpen = () => {

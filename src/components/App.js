@@ -5,7 +5,8 @@ import Header from './Header'
 import ChatSection from './ChatSection'
 import SendButton from './SendButton'
 
-export default function App({ handleOpen, isOpen, ...props }) {
+export default function App(props) {
+  const { handleOpen, isOpen } = props
   return (
     <div className={`${styles.root} ${isOpen ? styles.open : styles.close}`}>
       <Header handleOpen={handleOpen} {...props} />

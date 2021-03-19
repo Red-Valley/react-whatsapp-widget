@@ -10,7 +10,7 @@ export default function App({ handleOpen: restHandleOpen, ...props }) {
   const { isOpen, handleOpen } = useContext(WidgetContext)
 
   restHandleOpen = () => {
-    handleOpen()
+    return handleOpen()
   }
 
   return (

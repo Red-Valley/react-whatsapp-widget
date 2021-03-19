@@ -6,10 +6,12 @@ import Header from './Header'
 import ChatSection from './ChatSection'
 import SendButton from './SendButton'
 
-export default function App(props) {
+export default function App({ handleOpen: restHandleOpen, ...props }) {
   const { isOpen, handleOpen } = useContext(WidgetContext)
 
-  props.handleOpen = handleOpen
+  restHandleOpen = () => {
+    handleOpen()
+  }
 
   return (
     <div className={`${styles.root} ${isOpen ? styles.open : styles.close}`}>

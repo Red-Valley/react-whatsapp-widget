@@ -1,7 +1,6 @@
 import React from 'react'
 import App from './components/App'
 import WhatsAppButton from './components/WhatsAppButton'
-import { WidgetContextProvider } from './context/widgetContext'
 import styles from './index.module.css'
 
 export default function WhatsAppWidget({
@@ -11,22 +10,22 @@ export default function WhatsAppWidget({
   sendButton = 'Send',
   placeholder = 'Type a message',
   phoneNumber,
-  handleOpen
+  handleOpen,
+  isOpen
 }) {
   return (
     <div className={styles.root}>
-      <WidgetContextProvider>
-        <App
-          textReplyTime={textReplyTime}
-          companyName={companyName}
-          phoneNumber={phoneNumber}
-          sendButton={sendButton}
-          placeholder={placeholder}
-          message={message}
-          handleOpen={handleOpen}
-        />
-        <WhatsAppButton />
-      </WidgetContextProvider>
+      <App
+        textReplyTime={textReplyTime}
+        companyName={companyName}
+        phoneNumber={phoneNumber}
+        sendButton={sendButton}
+        placeholder={placeholder}
+        message={message}
+        handleOpen={handleOpen}
+        isOpen={isOpen}
+      />
+      <WhatsAppButton handleOpen={handleOpen} />
     </div>
   )
 }

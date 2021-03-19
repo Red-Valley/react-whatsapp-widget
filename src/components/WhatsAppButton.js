@@ -1,11 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
 import styles from './WhatsAppButton.module.css'
-import WidgetContext from '../context/widgetContext'
 
-export default function WhatsAppButton() {
-  const { handleOpen } = useContext(WidgetContext)
-
+export default function WhatsAppButton({ handleOpen }) {
   return (
     <div className={styles.root} onClick={handleOpen}>
       <FaWhatsapp />
